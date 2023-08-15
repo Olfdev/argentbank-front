@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAuthMutation, useGetProfileMutation } from '../rtk/ApiSlice';
 import { setToken, setUser } from '../rtk/AuthSlice';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -12,8 +12,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   const [auth, { isLoading: authIsLoading, isSuccess: authIsSuccess, data: authData, error: authError }] = useAuthMutation();
-  // const [profile, { error: profileError, data: profileData, isSuccess: profileIsSuccess }] = useGetProfileMutation();
-  const [profile, { data: profileData, isSuccess: profileIsSuccess }] = useGetProfileMutation();
+  const [getProfile, { data: profileData, isSuccess: profileIsSuccess }] = useGetProfileMutation();
 
   const handleLogin = () => {
     auth({ email, password });
@@ -22,13 +21,14 @@ export default function LoginPage() {
   useEffect(() => {
     if (authIsSuccess && authData) {
       dispatch(setToken(authData.body.token));
-      profile();
+      getProfile();
     }
-  }, [authIsSuccess, authData, dispatch, profile]);
+  }, [authIsSuccess, authData, dispatch, getProfile]);
 
   useEffect(() => {
     if (profileIsSuccess && profileData) {
         dispatch(setUser(profileData.body)); // Store user profile info in Redux
+        //console.log(profileData.body);
         navigate('/profile');
       }
     }, [profileIsSuccess, profileData, dispatch, navigate]);
@@ -55,9 +55,9 @@ export default function LoginPage() {
                 </form>
                 {authError && <p className='perror'>{authError.data.message.replace("Error: ", "")}</p>}
                 {authIsSuccess && <p className='psuccess'>{authData.message}</p>}
-                <Link to="/profile">
+                {/* <Link to="/profile">
                   {authIsSuccess && <button>Go to Profile Page</button>}
-                </Link>
+                </Link> */}
             </section>
         </div>
     );

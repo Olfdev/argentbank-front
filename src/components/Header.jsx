@@ -21,7 +21,7 @@ export default function Header(){
                 <div>
                     {isAuthenticated ? (
                         <>
-                            <Link className="main-nav-item" to="/profile">
+                            <Link className="main-nav-item" to="/account">
                                 <i className="fa fa-user-circle"></i>
                                 {user && <>{user.firstName}</>}
                             </Link>

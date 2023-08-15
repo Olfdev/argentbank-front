@@ -38,9 +38,28 @@ export const bankApi = createApi({
                 body: { userName: newUsername },
             }),
         }),
+        // getTransaction: builder.query({
+        //     query: (accountType) => ({
+        //         url: `/user/transactions/${accountType}`, // Adjust the API endpoint
+        //         method: 'GET',
+        //     }),
+        // }),
+        getTransaction: builder.mutation({
+            query: () => ({
+                url: `/user/transactions`, // Adjust the API endpoint
+                method: 'POST',
+            }),
+        }),
+        // updateTransaction: builder.mutation({
+        //     query: ({ transactionId, category, note }) => ({
+        //         url: `/transactions/${transactionId}`,
+        //         method: 'PUT',
+        //         body: { category, note },
+        //     }),
+        // }),
     }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useAuthMutation, useGetProfileMutation, useUpdateUsernameMutation } = bankApi
+export const { useAuthMutation, useGetProfileMutation, useUpdateUsernameMutation, useGetTransactionMutation, /*useUpdateTransactionMutation*/ } = bankApi

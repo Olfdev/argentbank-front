@@ -1,9 +1,9 @@
-import Homepage from '../components/Homepage'
+import HomeBody from '../components/Homebody'
 
 export default function Home(){
 	return (
 		<main>
-			<Homepage />
+			<HomeBody />
 		</main>
 	)
 }

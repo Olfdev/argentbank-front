@@ -1,9 +1,9 @@
-import LoginPage from '../components/Loginpage'
+import LoginBody from '../components/Loginbody'
 
 export default function Login(){
 	return (
 		<main>
-			<LoginPage />
+			<LoginBody />
 		</main>
 	)
 }

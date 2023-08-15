@@ -25,7 +25,7 @@ export default function Homepage(){
             <div className="feature-item">
                 <i alt="Security Icon" className="fa-solid fa-shield-halved feature-icon"></i>
                 <h3 className="feature-item-title">Security you can trust</h3>
-                <p> We use top of the line encryption to make sure your data and money is always safe.</p>
+                <p>We use top of the line encryption to make sure your data and money is always safe.</p>
             </div>
         </section>
     </>

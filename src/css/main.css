@@ -13,33 +13,55 @@ html {
   min-height: 100vh;
 }
 
-main{
+.fa-angle-down:before {
+  content: "\f107";
+  font-size: xx-large;
+}
+
+.fa-angle-up:before {
+  content: "\f106";
+  font-size: xx-large;
+}
+
+main {
   display: contents;
 }
 
-.error{
+.edit-button {
+  border-color: #00bc77;
+  background-color: #00bc77;
+  border-style: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 1rem;
+  margin: 2rem 0.5rem 0 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.error {
   font-size: 10rem;
 }
 
-.error-home a{
+.error-home a {
   font-weight: bold;
   color: #2c3e50;
   text-decoration: none;
 }
 
-.error-home a:hover{
+.error-home a:hover {
   text-decoration: underline;
 }
 
-.error-oops{
+.error-oops {
   margin-bottom: 10rem;
 }
 
-.perror{
+.perror {
   color: red;
 }
 
-.psuccess{
+.psuccess {
   color: green;
 }
 
@@ -50,16 +72,19 @@ main{
 
 .sr-only {
   border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  /* 1 */
   -webkit-clip-path: inset(50%) !important;
-  clip-path: inset(50%) !important; /* 2 */
+  clip-path: inset(50%) !important;
+  /* 2 */
   height: 1px !important;
   margin: -1px !important;
   overflow: hidden !important;
   padding: 0 !important;
   position: absolute !important;
   width: 1px !important;
-  white-space: nowrap !important; /* 3 */
+  white-space: nowrap !important;
+  /* 3 */
 }
 
 .main-nav {
@@ -82,7 +107,7 @@ main{
   color: #42b983;
 }
 
-.fa-user-circle{
+.fa-user-circle {
   margin-right: 0.5rem;
 }
 
@@ -122,6 +147,7 @@ main{
   padding: 2rem;
   text-align: left;
   margin: 0 auto;
+  border-radius: 1rem;
 }
 
 .hero-content .subtitle {
@@ -197,15 +223,16 @@ main{
 .sign-in-button {
   display: block;
   width: 100%;
-  padding: 8px;
+  padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: bold;
   margin-top: 1rem;
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
-  cursor:pointer;
+  cursor: pointer;
   border-style: solid;
+  border-radius: 0.5rem;
 }
 
 .sign-in-content {
@@ -215,6 +242,7 @@ main{
   margin: 0 auto;
   margin-top: 3rem;
   padding: 2rem;
+  border-radius: 1rem;
 }
 
 .sign-in-icon {
@@ -263,13 +291,34 @@ main{
   align-items: center;
   border: 1px solid black;
   background-color: #fff;
-  width: 80%;
+  width: 65%;
   margin: 0 auto;
-  flex-direction: column;
+  /* flex-direction: column; */
   padding: 1.5rem;
   box-sizing: border-box;
   text-align: left;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
+  /* border-radius: 1rem; */
+  /* color: #2c3e50 !important; */
+}
+
+.account-trans {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  background-color: #fff;
+  width: 65%;
+  margin-inline: auto;
+  margin-block: 2rem 5rem;
+  /* flex-direction: column; */
+  padding: 1.5rem;
+  box-sizing: border-box;
+  text-align: left;
+  border-radius: 1rem;
+  color: #2c3e50;
+  /* margin-block: 2rem; */
+  font-weight: 500;
 }
 
 .account-amount {
@@ -294,13 +343,119 @@ main{
   flex: 1;
 }
 
-.edit-button {
-  border-color: #00bc77;
-  background-color: #00bc77;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px;
-  margin: 2rem 0.5rem 0 0.5rem;
+.account-content-wrapper p,
+h1,
+h3 {
+  margin: 0;
+}
+
+.account-table-header-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr repeat(2, 1fr) 0.2fr;
+  /* grid-template-rows: repeat(2, 1fr); */
+  grid-column-gap: 50px;
+  /* grid-row-gap: 50px; */
+  text-align: left;
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+  /* margin-bottom: 1rem; */
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.account-table-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr repeat(2, 1fr) 0.2fr;
+  /* grid-template-rows: repeat(2, 1fr); */
+  grid-column-gap: 50px;
+  /* grid-row-gap: 50px; */
+  text-align: left;
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.account-table-transaction {
+  display: grid;
+  grid-template-columns: 1fr 3fr repeat(2, 1fr) 0.2fr;
+  /* grid-template-rows: repeat(2, 1fr); */
+  grid-column-gap: 50px;
+  /* grid-row-gap: 50px; */
+  text-align: left;
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  /* margin-bottom: 2rem; */
+  /* border-radius: 1rem 1rem 0 0; */
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+.account-table-transaction .fa-solid {
+  display: flex;
+  align-items: center;
+}
+
+.account-table-details {
+  display: grid;
+  grid-template-columns: 1fr 3fr repeat(2, 1fr) 0.2fr;
+  /* grid-template-rows: repeat(2, 1fr); */
+  grid-column-gap: 50px;
+  /* grid-row-gap: 50px; */
+  text-align: left;
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.account-table-details p {
+  /* margin-block-start: 0; */
+  margin-block-end: 0;
+}
+
+.account-table-details :last-child {
+  font-weight: 600;
+}
+
+.main div:nth-child(5) {
+  margin-top: 0;
+}
+
+.table-transactions {
+  margin-top: 2.5rem;
+}
+
+
+
+.account-collapse {
+  max-height: 0;
+  overflow-y: hidden;
+  margin-top: -0.9rem;
+}
+
+.account-collapse div:first-child {
+  padding: 2rem 1rem 0;
+}
+
+.account-collapse div:last-child {
+  padding: 0 1rem 1rem;
+}
+
+.account-collapse :last-child {
+  border-radius: 0 0 1rem 1rem
+}
+
+.down {
+  max-height: unset;
 }
 
 .header {
@@ -309,32 +464,50 @@ main{
   font-weight: 500;
 }
 
-.header input{
+.header input {
   border-radius: 0.5rem;
   padding: 0.5rem;
   border-style: none;
   margin: 0.5rem;
 }
 
-.header input[disabled]{
+.header input[disabled] {
   color: black;
 }
 
-.transaction-button {
+/* .transaction-button {
   display: block;
+  text-align: center;
   width: 100%;
   padding: 8px;
   font-size: 1.1rem;
   font-weight: bold;
-  margin-top: 1rem;
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+  text-decoration: auto;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+} */
+
+.transaction-button {
+  border-color: #00bc77;
+  background-color: #00bc77;
+  border-style: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  /* margin: 2rem 0.5rem 0 0.5rem; */
+  cursor: pointer;
+  border-radius: 0.5rem;
 }
 
 @media (min-width: 720px) {
   .account {
     flex-direction: row;
+    border-radius: 1rem;
   }
 
   .account-content-wrapper.cta {
@@ -342,6 +515,7 @@ main{
   }
 
   .transaction-button {
-    width: 200px;
+    /* width: 200px; */
+    min-width: max-content;
   }
 }
