@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export default function AccountPage({ setViewTransactions }){
+export default function AccountPage({ setViewTransactions },){
     const user = useSelector(state => state.auth.user);
 
     return (
@@ -17,7 +17,7 @@ export default function AccountPage({ setViewTransactions }){
               <div className="account-content-wrapper cta">
                 {/* <Link to={`/transactions/${account.account_type.toLowerCase().replace(/\s+/g, '_')}`} className="transaction-button">View transactions</Link> */}
                 {/* <Link to={`/transactions/${account.account_type}`} className="transaction-button" onClick={() => setViewTransactions(true)}>View transactions</Link> */}
-                <Link to={`${account.account_type}`}><button className="transaction-button" onClick={() => setViewTransactions(true)}>View transactions</button></Link>
+                <Link to={`${account.account_type}_${account.account_number}`}><button className="transaction-button" onClick={() => setViewTransactions(true)}>View transactions</button></Link>
               </div>
             </section>
             ))}

@@ -17,11 +17,18 @@ const authSlice = createSlice({
       state.user = action.payload;
       localStorage.setItem('user', JSON.stringify(action.payload)); // Save user data to local storage
     },
+    setTransaction: (state, action) => {
+      state.transaction = action.payload;
+      localStorage.setItem('description', JSON.stringify(action.payload));
+      localStorage.setItem('note', JSON.stringify(action.payload));
+    },
     clearToken: (state) => {
       state.token = null;
       state.user = null;
       localStorage.removeItem('token'); // Remove token from local storage
       localStorage.removeItem('user'); // Remove user data from local storage
+      localStorage.removeItem('description'); // Remove description data from local storage
+      localStorage.removeItem('note'); // Remove note data from local storage
     },
   },
 });

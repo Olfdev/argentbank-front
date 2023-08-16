@@ -22,6 +22,7 @@ export default function ProfilePage() {
 
     const handleSaveClick = () => {
         updateUsername(userName);
+        console.log(userName);
         dispatch(setUser({ ...user, userName: userName }));
         setIsEditing(false);
     };

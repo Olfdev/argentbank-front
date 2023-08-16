@@ -20,7 +20,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={ (isAuthenticated) ? <Navigate to="/account" /> : <Login />}/>
         <Route path="/account" element={ (isAuthenticated) ? <Profile /> : <Navigate to="/login" />}/>
-        <Route path="/account/:accountType" element={ (isAuthenticated) ? <TransactionBody /> : <Navigate to="/login" />}/>
+        <Route path="/account/:accountTypeAndNumber" element={ (isAuthenticated) ? <TransactionBody /> : <Navigate to="/login" />}/>
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
