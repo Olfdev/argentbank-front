@@ -366,10 +366,10 @@ main {
   font-weight: normal;
 }
 
-.account-content-wrapper {
+/* .account-content-wrapper {
   width: 100%;
   flex: 1;
-}
+} */
 
 .account-content-wrapper p,
 h1,
@@ -575,9 +575,9 @@ input[disabled] {
   border-radius: 0.5rem;
 }
 
-@media (min-width: 720px) {
+@media (max-width: 860px) {
   .account {
-    flex-direction: row;
+    display: block;
     border-radius: 1rem;
   }
 
@@ -586,7 +586,40 @@ input[disabled] {
   }
 
   .transaction-button {
-    /* width: 200px; */
-    min-width: max-content;
+    min-width: 100%;
+    margin-top: 2rem;
   }
+
+  .account-trans {
+    width: 76%;
+    font-size: small;
+  }
+
+  .account-table-header-wrapper {
+    width: 95%;
+    font-size: small;
+  }
+
+  .account-table-transaction {
+    width: 95%;
+    font-size: small;
+  }
+
+  .account-table-details {
+    width: 95%;
+  }
+
+  .account-table-details p {
+    font-size: smaller;
+  }
+
+  .fa-circle-chevron-left {
+    transform: translateX(-68px);
+  }
+
+  input,
+  select {
+    font-size: small;
+  }
+
 }
